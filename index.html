@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment</title>
+    <style>
+       table{
+        border-collapse: collapse;
+        width:100%;
+        margin-top: 5%;
+        font-size: 12pt;
+  }
+  th,td{
+     border: 1pt solid #D8D9DA;
+     padding: 10px;
+     text-align: center;
+  }
+  th{
+    background-color:  #D6EFED;
+
+  }
+    </style>
+</head>
+<body>
+    <table id="EmployeeTable">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Designation</th>
+                <th>Dateofjoining</th>
+                <th>Address</th>
+                <th>Salary</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script>
+        var employees=[
+            {Name:'Vedanti',Designation:'Technical writer', Dateofjoining:'1-12-2023',Address:'pune',Salary:'600000'},     
+            {Name:'Shruti',Designation:'Technical writer', Dateofjoining:'30-11-2023',Address:'pune',Salary:'500000'},
+            {Name:'Rahul',Designation:'Software Developer', Dateofjoining:'2-12-2023',Address:'pune',Salary:'600000'},
+            {Name:'Ajinkya',Designation:'Technical writer', Dateofjoining:'3-12-2023',Address:'pune',Salary:'400000'},
+
+        ];
+        function displayemployees(){
+            var tableBody= document.getElementById('EmployeeTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML="";
+            employees.forEach(function(employee)
+            {
+                if (employee.Designation==='Technical writer'&& employee.Salary>500000 && employee.Salary<700000)
+                {
+                  var row=tableBody.insertRow();
+                  row.insertCell(0).innerHTML=employee.Name;
+                  row.insertCell(1).innerHTML=employee.Designation;
+                  row.insertCell(2).innerHTML=employee.Dateofjoining;
+                }
+            
+        });
+    }
+    displayemployees();
+    </script>
+</body>
+</html>
